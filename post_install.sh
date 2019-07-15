@@ -9,9 +9,9 @@ DATA_LOCATION="/app-data/overviewer"
 git clone git://github.com/overviewer/Minecraft-Overviewer.git 
 
 # get the header files required to build "overviewer"
-fetch https://raw.githubusercontent.com/python-pillow/Pillow/master/src/libImaging/Imaging.h
-fetch https://raw.githubusercontent.com/python-pillow/Pillow/master/src/libImaging/ImPlatform.h
-fetch https://raw.githubusercontent.com/python-pillow/Pillow/master/src/libImaging/ImagingUtils.h
+fetch --no-verify-peer https://raw.githubusercontent.com/python-pillow/Pillow/master/src/libImaging/Imaging.h
+fetch --no-verify-peer https://raw.githubusercontent.com/python-pillow/Pillow/master/src/libImaging/ImPlatform.h
+fetch --no-verify-peer https://raw.githubusercontent.com/python-pillow/Pillow/master/src/libImaging/ImagingUtils.h
 
 # build "overviewer"
 ./python3 setup.py build
