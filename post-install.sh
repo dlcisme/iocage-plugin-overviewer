@@ -8,6 +8,9 @@ DATA_LOCATION="/app-data/overviewer"
 # clone the "overviewer" package
 git clone git://github.com/overviewer/Minecraft-Overviewer.git 
 
+# build "overviewer"
+./python3 setup.py build
+
 # create "overviewer" user
 pw user add overviewer -c overviewer -u 353 -d /nonexistent -s /usr/bin/nologin
 
