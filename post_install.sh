@@ -1,13 +1,13 @@
 #!/bin/sh
 
 _BASE_DIR="/usr/local"
-_OVERVIEWER_DIR="$_BASE_DIR"
+_OVERVIEWER_DIR="$_BASE_DIR/overviewer"
 
 # set the data location
 DATA_LOCATION="/app-data/overviewer"
 
 # clone the "overviewer" package
-git clone git://github.com/overviewer/Minecraft-Overviewer.git $_OVERVIEWER_DIR/overviewer.git
+git clone git://github.com/overviewer/Minecraft-Overviewer.git $_OVERVIEWER_DIR
 
 # get the header files required to build "overviewer"
 fetch --no-verify-peer -o $_OVERVIEWER_DIR/ https://raw.githubusercontent.com/python-pillow/Pillow/master/src/libImaging/Imaging.h
@@ -15,7 +15,7 @@ fetch --no-verify-peer -o $_OVERVIEWER_DIR/ https://raw.githubusercontent.com/py
 fetch --no-verify-peer -o $_OVERVIEWER_DIR/ https://raw.githubusercontent.com/python-pillow/Pillow/master/src/libImaging/ImagingUtils.h
 
 # build "overviewer"
-/usr/local/overviewer/python3 setup.py build
+$_OVERVIEWER_DIR/python3 setup.py build
 
 # create "overviewer" user
 pw user add overviewer -c overviewer -u 353 -d /nonexistent -s /usr/bin/nologin
