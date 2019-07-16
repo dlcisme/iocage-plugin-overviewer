@@ -7,7 +7,7 @@ _OVERVIEWER_DIR="$_BASE_DIR"
 DATA_LOCATION="/app-data/overviewer"
 
 # clone the "overviewer" package
-git clone git://github.com/overviewer/Minecraft-Overviewer.git 
+git clone git://github.com/overviewer/Minecraft-Overviewer.git $_OVERVIEWER_DIR/overviewer.git
 
 # get the header files required to build "overviewer"
 fetch --no-verify-peer -o $_OVERVIEWER_DIR/ https://raw.githubusercontent.com/python-pillow/Pillow/master/src/libImaging/Imaging.h
