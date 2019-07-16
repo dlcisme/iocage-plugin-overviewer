@@ -15,7 +15,7 @@ fetch --no-verify-peer -o $_OVERVIEWER_DIR/ https://raw.githubusercontent.com/py
 fetch --no-verify-peer -o $_OVERVIEWER_DIR/ https://raw.githubusercontent.com/python-pillow/Pillow/master/src/libImaging/ImagingUtils.h
 
 # build "overviewer"
-./python3 setup.py build
+/usr/local/overviewer/python3 setup.py build
 
 # create "overviewer" user
 pw user add overviewer -c overviewer -u 353 -d /nonexistent -s /usr/bin/nologin
