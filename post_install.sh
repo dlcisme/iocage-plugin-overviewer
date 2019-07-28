@@ -2,6 +2,7 @@
 
 _BASE_DIR="/usr/local"
 _OVERVIEWER_DIR="$_BASE_DIR/overviewer"
+_OVERVIEWER_UPDATE_FILE="$_OVERVIEWER_DIR/overviewer-update.sh"
 _OVERVIEWER_USER="overviewer"
 _OVERVIEWER_PASSWORD="overviewer"
 
@@ -22,11 +23,19 @@ python3 $_OVERVIEWER_DIR/setup.py build
 # create "overviewer" user
 #pw user add overviewer -c overviewer -u 353 -d /nonexistent -s /usr/bin/nologin
 
-# create a symbolic link to "overviewer.py" file from a directory in the PATH
-ln -s $_OVERVIEWER_DIR/overviewer.py $_BASE_DIR/bin/overviewer.py
-
 # create user to run overviewer
 echo $_OVERVIEWER_PASSWORD | pw user add -n $_OVERVIEWER_USER -s /bin/sh -m -h 0 -c "User for Overviewer" -G games
+
+# create a symbolic link to "overviewer.py" file to a directory in the PATH
+ln -s $_OVERVIEWER_DIR/overviewer.py $_BASE_DIR/bin/overviewer.py
+
+# build a file to update overviewer
+echo "#!/bin/sh" >> $_OVERVIEWER_UPDATE_FILE
+echo "git pull git://github.com/overviewer/Minecraft-Overviewer.git $_OVERVIEWER_DIR" >> $_OVERVIEWER_UPDATE_FILE
+echo "python3 $_OVERVIEWER_DIR/setup.py build" >> $_OVERVIEWER_UPDATE_FILE
+
+# create a symbolic link to "overviewer-update.sh" file to a directory in the PATH
+ln -s $_OVERVIEWER_DIR/overviewer-update.sh $_BASE_DIR/bin/overviewer-update.sh
 
 # create the data location
 #mkdir -p $DATA_LOCATION
