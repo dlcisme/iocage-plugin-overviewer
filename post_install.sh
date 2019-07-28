@@ -20,7 +20,7 @@ fetch --no-verify-peer -o $_OVERVIEWER_DIR https://raw.githubusercontent.com/pyt
 python3 $_OVERVIEWER_DIR/setup.py build
 
 # create "overviewer" user
-pw user add overviewer -c overviewer -u 353 -d /nonexistent -s /usr/bin/nologin
+#pw user add overviewer -c overviewer -u 353 -d /nonexistent -s /usr/bin/nologin
 
 # create a symbolic link to "overviewer.py" file from a directory in the PATH
 ln -s $_OVERVIEWER_DIR/overviewer.py $_BASE_DIR/bin/overviewer.py
