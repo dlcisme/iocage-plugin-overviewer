@@ -48,7 +48,7 @@ echo "python3 $_OVERVIEWER_DIR/setup.py build" >> $_OVERVIEWER_UPDATE_FILE
 ln -s $_OVERVIEWER_DIR/overviewer-update.sh $_BASE_DIR/bin/overviewer-update.sh
 
 # get the jar file that contains the textures
-fetch https://overviewer.org/textures/$_OVERVIEWER_VERSION -o $_DATA_LOCATION/jar/$_OVERVIEWER_VERSION
+fetch https://overviewer.org/textures/$_OVERVIEWER_VERSION -o $_DATA_LOCATION/jar/$_OVERVIEWER_VERSION.jar
 
 # give execute permssion to the Daemon script
 #chmod u+x /usr/local/etc/rc.d/overviewer
