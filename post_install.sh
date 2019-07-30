@@ -10,6 +10,15 @@ _OVERVIEWER_PASSWORD="overviewer"
 # set the data location
 DATA_LOCATION="/app-data/overviewer"
 
+# create the data location
+mkdir -p $DATA_LOCATION
+
+# make "overviewer" the owner of the install and data locations
+#chown -R overviewer:overviewer /usr/local/share $DATA_LOCATION
+
+# give write permission for plugin update
+chmod 755 $DATA_LOCATION
+
 # clone the "overviewer" package
 git clone git://github.com/overviewer/Minecraft-Overviewer.git $_OVERVIEWER_DIR
 
@@ -40,15 +49,6 @@ ln -s $_OVERVIEWER_DIR/overviewer-update.sh $_BASE_DIR/bin/overviewer-update.sh
 
 # get the jar file that contains the textures
 fetch https://overviewer.org/textures/$_OVERVIEWER_VERSION -o $_DATA_LOCATION/jar/$_OVERVIEWER_VERSION
-
-# create the data location
-#mkdir -p $DATA_LOCATION
-
-# make "overviewer" the owner of the install and data locations
-#chown -R overviewer:overviewer /usr/local/share $DATA_LOCATION
-
-# give write permission for plugin update
-#chmod 755 $DATA_LOCATION
 
 # give execute permssion to the Daemon script
 #chmod u+x /usr/local/etc/rc.d/overviewer
