@@ -1,5 +1,6 @@
 #!/bin/sh
 
+_OVERVIEWER_VERSION="1.14"
 _BASE_DIR="/usr/local"
 _OVERVIEWER_DIR="$_BASE_DIR/overviewer"
 _OVERVIEWER_UPDATE_FILE="$_OVERVIEWER_DIR/overviewer-update.sh"
@@ -36,6 +37,9 @@ echo "python3 $_OVERVIEWER_DIR/setup.py build" >> $_OVERVIEWER_UPDATE_FILE
 
 # create a symbolic link to "overviewer-update.sh" file to a directory in the PATH
 ln -s $_OVERVIEWER_DIR/overviewer-update.sh $_BASE_DIR/bin/overviewer-update.sh
+
+# get the jar file that contains the textures
+fetch https://overviewer.org/textures/$_OVERVIEWER_VERSION -o $_DATA_LOCATION/jar/$_OVERVIEWER_VERSION
 
 # create the data location
 #mkdir -p $DATA_LOCATION
