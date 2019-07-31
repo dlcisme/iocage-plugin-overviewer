@@ -8,16 +8,18 @@ _OVERVIEWER_USER="overviewer"
 _OVERVIEWER_PASSWORD="overviewer"
 
 # set the data location
-DATA_LOCATION="/app-data/overviewer"
+_DATA_LOCATION="/app-data/overviewer"
 
-# create the data location
-mkdir -p $DATA_LOCATION
+# create the data directories
+mkdir -p $_DATA_LOCATION/overviewer
+mkdir -p $_DATA_LOCATION/servers
+mkdir -p $_DATA_LOCATION/maps
 
-# make "overviewer" the owner of the install and data locations
+# make "overviewer" the owner of the data locations
 #chown -R overviewer:overviewer /usr/local/share $DATA_LOCATION
 
 # give write permission for plugin update
-chmod 755 $DATA_LOCATION
+#chmod 755 $DATA_LOCATION
 
 # clone the "overviewer" package
 git clone git://github.com/overviewer/Minecraft-Overviewer.git $_OVERVIEWER_DIR
