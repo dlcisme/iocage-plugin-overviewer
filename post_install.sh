@@ -8,7 +8,7 @@ _OVERVIEWER_USER="overviewer"
 _OVERVIEWER_PASSWORD="overviewer"
 
 # set the data location
-_DATA_LOCATION="/app-data/overviewer"
+_DATA_LOCATION="/app-data/"
 
 # create the data directories
 mkdir -p $_DATA_LOCATION/overviewer
