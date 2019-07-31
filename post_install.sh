@@ -12,7 +12,7 @@ _DATA_BASE="/app-data"
 _DATA_LOCATION="$_DATA_BASE/overviewer"
 
 # create the data directories
-mkdir -p $_DATA_LOCATION
+mkdir -p $_DATA_LOCATION/jar
 mkdir -p $_DATA_BASE/servers
 mkdir -p $_DATA_BASE/maps
 
