@@ -8,12 +8,13 @@ _OVERVIEWER_USER="overviewer"
 _OVERVIEWER_PASSWORD="overviewer"
 
 # set the data location
-_DATA_LOCATION="/app-data/"
+_DATA_BASE="/app-data"
+_DATA_LOCATION="$_DATA_BASE/overviewer"
 
 # create the data directories
-mkdir -p $_DATA_LOCATION/overviewer
-mkdir -p $_DATA_LOCATION/servers
-mkdir -p $_DATA_LOCATION/maps
+mkdir -p $_DATA_LOCATION
+mkdir -p $_DATA_BASE/servers
+mkdir -p $_DATA_BASE/maps
 
 # make "overviewer" the owner of the data locations
 #chown -R overviewer:overviewer /usr/local/share $DATA_LOCATION
