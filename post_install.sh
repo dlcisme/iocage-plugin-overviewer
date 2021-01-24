@@ -1,6 +1,6 @@
 #!/bin/sh
 
-_OVERVIEWER_VERSION="1.14"
+_OVERVIEWER_VERSION="1.15"
 _BASE_DIR="/usr/local"
 _OVERVIEWER_DIR="$_BASE_DIR/overviewer"
 _OVERVIEWER_UPDATE_FILE="$_OVERVIEWER_DIR/overviewer-update.sh"
@@ -58,7 +58,7 @@ ln -s $_OVERVIEWER_DIR/overviewer-update.sh $_BASE_DIR/bin/overviewer-update.sh
 # give execute permssion to the Daemon script
 #chmod u+x /usr/local/etc/rc.d/overviewer
 
-# enable lidarr to start at boot
+# enable overviewer to start at boot
 #sysrc "overviewer_enable=YES"
 
 # set the location for the data directory
